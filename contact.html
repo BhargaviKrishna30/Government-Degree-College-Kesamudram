@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact Us - GDC</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<!-- HEADER -->
+<header class="bg-blue-900 text-white py-4 shadow-lg">
+  <div class="max-w-6xl mx-auto flex items-center justify-between px-4">
+
+    <div class="flex items-center space-x-4">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1751814523/Screenshot_2025-07-06_203805_sqnunk.png" class="w-16 h-16 rounded-full object-cover">
+      <div>
+        <h1 class="text-3xl font-bold">GOVERNMENT DEGREE COLLEGE</h1>
+        <p class="text-lg"><i>Kesamudram</i></p>
+      </div>
+    </div>
+
+    <nav class="space-x-6 text-lg">
+      <a href="index.html" class="hover:underline">Home</a>
+      <a href="about.html" class="hover:underline">About</a>
+      <a href="contact.html" class="hover:underline">Contact</a>
+      <a href="syllabus.html" class="hover:underline">Syllabus</a>
+    </nav>
+
+  </div>
+</header>
+
+<main class="max-w-4xl mx-auto p-6 space-y-8">
+
+  <!-- Lecturers -->
+  <section class="bg-white p-6 rounded shadow">
+    <h2 class="text-xl font-bold mb-3 text-center">Our Lecturers</h2>
+    <ul class="space-x-4 space-y-4"><hr>
+      <li><strong>Dr.D Raju</strong> — +91 7780701084</li>
+      <li><strong>L.Santhosh Reddy</strong> — +91 7995911680</li>
+      <li><strong>Dr.G Ramesh babu</strong> — +91 0000000000 </li>
+      <li><strong>A.Yadagiri</strong> — +91 8008130180</li>
+      <li><strong>G.raju</strong> — +91 9989584965</li>
+      <li><strong>Ch.Maisaiah</strong> — +91 9848858645</li>
+      <li><strong>MD.Munni</strong> — +91 6303948891</li>
+      <li><strong>B.Manjula</strong> — +91 9704617873</li>
+    </ul>
+  </section>
+
+<form 
+  action="https://formsubmit.co/gdckesamudram@gmail.com" 
+  method="POST" 
+  class="space-y-4 bg-white p-6 rounded shadow">
+
+  <!-- Disable Captcha (Optional) -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- Redirect to thank-you page (Optional) -->
+  <!-- <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html"> -->
+
+  <div>
+    <label class="block font-semibold">Name</label>
+    <input type="text" name="name" class="w-full border p-2 rounded" required>
+  </div>
+
+  <div>
+    <label class="block font-semibold">Email</label>
+    <input type="email" name="email" class="w-full border p-2 rounded" required>
+  </div>
+
+  <div>
+    <label class="block font-semibold">Message</label>
+    <textarea name="message" class="w-full border p-2 rounded" required></textarea>
+  </div>
+
+  <button class="bg-blue-900 text-white px-4 py-2 rounded">
+    Send Message
+  </button>
+
+</form>
+
+</main>
+
+<footer class="bg-blue-900 text-white text-center p-4 mt-12">
+  © 2024 GOVERNMENT DEGREE COLLEGE.
+</footer>
+
+</body>
+</html>
