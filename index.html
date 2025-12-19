@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -158,89 +159,58 @@ body {
 </main>
 
 
-<!-- CAMPUS GALLERY - LARGE AUTO SLIDESHOW -->
-<section class="max-w-6xl mx-auto px-4 py-14">
-  <h2 class="text-2xl font-bold mb-6 text-center">Campus Gallery</h2>
+<!-- CAMPUS GALLERY -->
+<section class="max-w-6xl mx-auto px-4 py-10">
+  <h2 class="text-2xl font-bold text-center mb-4">Campus Gallery</h2>
 
-  <div class="flex items-center justify-center gap-6">
-
-    <!-- LEFT BUTTON -->
-    <button id="prevBtn"
-      class="bg-blue-100 text-white px-5 py-3 rounded shadow hover:bg-blue-700 text-xl">
-      ◀
-    </button>
-
-    <!-- LARGE IMAGE BOX -->
-    <div class="w-full max-w-4xl overflow-hidden rounded-xl shadow-lg border bg-white">
-
-      <img id="slideImage" class="w-full object-contain h-auto"
-        src="https://res.cloudinary.com/dslbun9vq/image/upload/v1756108714/clg_2_jopdzi.jpg">
-
+  <div class="gallery-wrapper">
+    <div class="gallery-track">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1756108714/clg_2_jopdzi.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1756108805/clg_3_d1y3ri.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1756108277/clg_1_alek56.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_10_vjcoyr.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_9_ajs6xw.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_7_zlboug.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_11_lojnht.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/c_crop,w_960,h_540,ar_16:9,g_auto/v1765351180/clg_8_mvbpjc.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1766148604/WhatsApp_Image_2025-12-19_at_6.16.37_PM_bcztkr.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1766150438/WhatsApp_Image_2025-12-19_at_6.48.50_PM_cdyqpe.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1766150437/WhatsApp_Image_2025-12-19_at_6.49.12_PM_fe3lr7.jpg">
+      <img src="https://res.cloudinary.com/dslbun9vq/image/upload/v1766150438/WhatsApp_Image_2025-12-19_at_6.48.51_PM_qtjfwc.jpg">
+      <img src="">
     </div>
-
-    <!-- RIGHT BUTTON -->
-    <button id="nextBtn"
-      class="bg-blue-100 text-white px-5 py-3 rounded shadow hover:bg-blue-700 text-xl">
-      ▶
-    </button>
-
   </div>
 </section>
 <style>
-  #slideImage {
-  width: 100%;
-  max-height: 360px;
-  object-fit: contain;
-  background-color: #f1f5f9; /* light gray */
-  border-radius: 12px;
+  /* CAMPUS GALLERY MOBILE SLIDER */
+.gallery-wrapper {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gallery-track {
+  display: flex;
+  gap: 16px;
+}
+
+.gallery-track img {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: 220px;
+  object-fit: contain; /* FULL IMAGE, NO CUT */
+  background: #f5f5f5;
+  border-radius: 16px;
+  scroll-snap-align: center;
+}
+
+/* Desktop improvement */
+@media (min-width: 768px) {
+  .gallery-track img {
+    height: 350px;
+  }
 }
 </style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-
-  // Your slideshow images
-  const images = [
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1756108714/clg_2_jopdzi.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1756108805/clg_3_d1y3ri.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1756108277/clg_1_alek56.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_10_vjcoyr.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_9_ajs6xw.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_7_zlboug.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1765351180/clg_11_lojnht.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/c_crop,w_960,h_540,ar_16:9,g_auto/v1765351180/clg_8_mvbpjc.jpg",
-    "https://res.cloudinary.com/dslbun9vq/image/upload/v1766148604/WhatsApp_Image_2025-12-19_at_6.16.37_PM_bcztkr.jpg"
-    
-    
-  ];
-
-  let index = 0;
-  const imgTag = document.getElementById("slideImage");
-
-  function showImage(i) {
-    index = (i + images.length) % images.length;
-    imgTag.src = images[index];
-  }
-
-  // Auto Slide every 3 seconds
-  let auto = setInterval(() => showImage(index + 1), 3000);
-
-  // Buttons
-  document.getElementById("prevBtn").onclick = () => {
-    showImage(index - 1);
-    reset();
-  };
-
-  document.getElementById("nextBtn").onclick = () => {
-    showImage(index + 1);
-    reset();
-  };
-
-  function reset() {
-    clearInterval(auto);
-    auto = setInterval(() => showImage(index + 1), 3000);
-  }
-});
-</script>
 
 <!-- FACULTY SECTION -->
 <section class="bg-white py-12 px-4 relative z-10">
@@ -453,8 +423,6 @@ document.addEventListener("DOMContentLoaded", function() {
 </body>
 
 </html>
-
-
 
 
 
